@@ -23,10 +23,10 @@
     <div id="root">
       <!--container main page -->
       <div class="container p-0">
-        <div class="row">
+        <div class="row g-0">
           
           <!--colonna sezione di sinistra -->
-          <div class="col-5 ">
+          <div class="col-5 p-0 ">
             
             <!--header con nome utente e foto-->
             <section class="head d-flex">
@@ -80,16 +80,46 @@
 
 
           <!--colonna sezione di destra -->
-          <div class="col-9 ">
+          <div class="col-7 p-0 ">
 
             <!--header messages -->
             <div class="top-messages">
-
+              <section class="head d-flex">
+                <div class="user-image">
+                  <img src="img/avatar_io.jpg" class="round-images " alt="">
+                </div>
+                <div class="user-name ">
+                  <h3 class="fs-5 pt-3 mb-0">Nome utente</h3>
+                  <p class="last-access">ultimo acceso alle 18:00</p>
+                </div>
+  
+                <div class="icons-user pe-3">
+                  <i class="fas fa-search"></i>
+                  <i class="fas fa-paperclip"></i>
+                  <i class="fas fa-ellipsis-v"></i>
+                </div>
+                
+              </section>
             </div>
 
             <!--chat messages section-->
-            <section>
-              <div>
+            <section class="main-chat">
+              <div class="row gy-2">
+                <div class="col-12">
+                  <div class="msg sended-message offset-8">
+                    <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
+                    <span class="msg-info d-flex ">15:30</span>
+                  </div>
+                </div>
+                
+                <div class="row gy-2">
+                  <div class="col-12">
+                    <div class="msg received-message col-4">
+                      <p class="ps-3 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta excepturi </p>
+                      <span class="msg-info d-flex  ">15:30</span>
+                    </div>
+                </div>
+                
                 
               </div>
             </section>
@@ -97,7 +127,6 @@
             <!--input text bottom section-->
             <section>
               <div>
-
               </div>
             </section>
           </div>

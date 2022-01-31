@@ -58,10 +58,14 @@ body{
     border: none;
     width: 70%;
 }
-.fa-search{
+.search-cs .fa-search{
     margin-right: 30px;
     color: lightgray;
 
+}
+
+.last-access{
+    line-height: normal;
 }
 
 /*layout*/
@@ -105,7 +109,32 @@ body{
     height: 75vh;
 }
 
+.main-chat{
+    background-image: url(../img/mine.jpg);
+    height: 80vh;
+    padding: 10px 40px;
+    overflow-y: scroll;
+}
+
+.msg{
+    min-height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.msg-info{
+    font-size: 9px;
+}
+
+
+
 /*** JS classes***/
 .clicked-chat{
     background-color:#F9F9F9 ;
+}
+
+.sended-message{
+    background-color: #D5F9BA;
+}
+.received-message{
+    background-color: #FFFFFF;
 }
