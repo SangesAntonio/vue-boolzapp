@@ -53,6 +53,17 @@ body{
     color: rgb(100, 100, 100);
 }
 
+.input-search{
+    text-decoration: none;
+    border: none;
+    width: 70%;
+}
+.fa-search{
+    margin-right: 30px;
+    color: lightgray;
+
+}
+
 /*layout*/
 .head{
     background-color: #EAEAEA;
@@ -70,5 +81,18 @@ body{
     
     line-height: 80px;
     vertical-align: middle;
+    padding-left: 10px;
+}
+
+.search-around{
+    height: 40px;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #F9F9F9;
+    
+}
+.search-cs{
+    width: 100%;
+    background-color: white;
     padding-left: 10px;
 }
