@@ -96,3 +96,12 @@ body{
     background-color: white;
     padding-left: 10px;
 }
+
+.contact-chat{
+    padding: 10px 15px;
+}
+
+/*** JS classes***/
+.clicked-chat{
+    background-color:#F9F9F9 ;
+}
