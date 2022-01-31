@@ -100,6 +100,10 @@ body{
 .contact-chat{
     padding: 10px 15px;
 }
+.contact-list{
+    overflow-y: auto;
+    height: 75vh;
+}
 
 /*** JS classes***/
 .clicked-chat{
