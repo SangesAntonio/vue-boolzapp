@@ -26,7 +26,7 @@
         <div class="row g-0">
           
           <!--colonna sezione di sinistra -->
-          <div class="col-5 p-0 ">
+          <div class="col-4 p-0 ">
             
             <!--header con nome utente e foto-->
             <section class="head d-flex">
@@ -68,10 +68,10 @@
             <!--sezione lista utenti/chat attive-->
             <section class="contact-list">
 
-              <!-- chat-->
-              <div class="d-flex contact-chat clicked-chat">
-                <img src="img/avatar_1.jpg" class='round-images'alt="">
-                <span class="fs-5 ps-2">Scotti</span>
+              <!-- chat aperte-->
+              <div v-for='(contact, index) in contacts' class="d-flex contact-chat clicked-chat">
+                <img :src="`img/avatar${contact.avatar}.jpg`" class='round-images'alt="">
+                <span class="fs-5 ps-2 name-user">{{contact.name}}</span>
               </div>
               
 
@@ -80,7 +80,7 @@
 
 
           <!--colonna sezione di destra -->
-          <div class="col-7 p-0 ">
+          <div class="col-8 p-0 ">
 
             <!--header messages -->
             <div class="top-messages">
@@ -89,7 +89,7 @@
                   <img src="img/avatar_io.jpg" class="round-images " alt="">
                 </div>
                 <div class="user-name ">
-                  <h3 class="fs-5 pt-3 mb-0">Nome utente</h3>
+                  <h3 class="fs-5 pt-3 mb-0">Michele</h3>
                   <p class="last-access">ultimo acceso alle 18:00</p>
                 </div>
   
@@ -105,6 +105,24 @@
             <!--chat messages section-->
             <section class="main-chat">
               <div class="row gy-2">
+                <div class="col-12">
+                  <div class="msg sended-message offset-8">
+                    <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
+                    <span class="msg-info d-flex ">15:30</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="msg sended-message offset-8">
+                    <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
+                    <span class="msg-info d-flex ">15:30</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="msg sended-message offset-8">
+                    <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
+                    <span class="msg-info d-flex ">15:30</span>
+                  </div>
+                </div>
                 <div class="col-12">
                   <div class="msg sended-message offset-8">
                     <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
@@ -133,7 +151,6 @@
           </div>
         </div>
       </div>
-      
     </div>
   </div>
   <script src="js/script.js"></script>

@@ -30,6 +30,9 @@ const app = new Vue({
         
     },
     methods:{
+      
+    
+      
 
     },
 })

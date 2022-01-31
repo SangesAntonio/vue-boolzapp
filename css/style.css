@@ -102,7 +102,7 @@ body{
 }
 
 .search-around{
-    height: 40px;
+    height: 60px;
     width: 100%;
     padding: 10px 15px;
     background-color: #F9F9F9;
@@ -120,6 +120,10 @@ body{
 .contact-list{
     overflow-y: auto;
     height: 75vh;
+}
+.name-user{
+    border-bottom: 1px solid lightgray;
+    width: 100%;
 }
 
 .main-chat{
