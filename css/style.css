@@ -52,7 +52,6 @@ body{
     text-decoration: underline;
     color: rgb(100, 100, 100);
 }
-
 .input-search{
     text-decoration: none;
     border: none;
@@ -61,11 +60,25 @@ body{
 .search-cs .fa-search{
     margin-right: 30px;
     color: lightgray;
-
+    
 }
 
 .last-access{
     line-height: normal;
+}
+.msg-input{
+    text-decoration: none;
+    border: none;
+    height: auto;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+
+}
+.fa-microphone,
+.fa-smile{
+    font-size: 2rem;
+    color: gray;
 }
 
 /*layout*/
@@ -124,6 +137,20 @@ body{
 .msg-info{
     font-size: 9px;
 }
+
+.type-msg{
+    height: 73px;
+    background-color: #F3EEEA;
+    
+    padding: 10px 15px;
+}
+
+.container-input-msg{
+    width: 80%;
+    height: 50px;
+}
+
+
 
 
 
