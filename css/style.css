@@ -1,0 +1,10 @@
+body{
+    height: 100vh;
+    padding: 25px 35px;
+    background: linear-gradient(to bottom,  #009688 0% 20%, #D7DBD7 20% 100% );
+    
+}
+.container{
+    background-color: white;
+    height: 95vh;
+}
