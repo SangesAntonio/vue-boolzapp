@@ -21,14 +21,36 @@ body{
 .icons-user{
     margin-left: auto;
 }
-.fas{
+.head .fas{
     padding-right: 10px;
     color: lightgray;
     font-size: 1.7rem;
 }
 
 .notific{
-    
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #8edafc;
+
+}
+
+.text-notific{
+    line-height: 80px;
+    vertical-align: middle;
+    padding-left: 10px;
+
+}
+
+.notif-text-down,
+.notif-text-up{
+    line-height: normal;
+    margin: 0;
+}
+.notif-text-down{
+    text-decoration: underline;
+    color: rgb(100, 100, 100);
 }
 
 /*layout*/
@@ -41,12 +63,12 @@ body{
     padding-left: 10px;
 }
 
-.alert{
+.alert-cs{
     background-color: #8EDAFC;
-    height: 70px;
+    height: 80px;
     width: 100%;
-
-    line-height: 70px;
+    
+    line-height: 80px;
     vertical-align: middle;
     padding-left: 10px;
 }
