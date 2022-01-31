@@ -8,4 +8,45 @@ body{
     background-color: white;
     height: 95vh;
 }
+/*colors
 
+/*utilities*/
+.round-images{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+}
+
+.icons-user{
+    margin-left: auto;
+}
+.fas{
+    padding-right: 10px;
+    color: lightgray;
+    font-size: 1.7rem;
+}
+
+.notific{
+    
+}
+
+/*layout*/
+.head{
+    background-color: #EAEAEA;
+    height: 70px;
+    width: 100%;
+    line-height: 70px;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.alert{
+    background-color: #8EDAFC;
+    height: 70px;
+    width: 100%;
+
+    line-height: 70px;
+    vertical-align: middle;
+    padding-left: 10px;
+}

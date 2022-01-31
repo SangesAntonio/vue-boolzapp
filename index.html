@@ -22,19 +22,35 @@
     
     <div id="root">
       <!--container main page -->
-      <div class="container">
+      <div class="container p-0">
         <div class="row">
           
           <!--colonna sezione di sinistra -->
-          <div class="col-4 ">
+          <div class="col-5 ">
             
             <!--header con nome utente e foto-->
-            <section class="head">
+            <section class="head d-flex">
+              <div class="user-image">
+                <img src="img/avatar_io.jpg" class="round-images " alt="">
+              </div>
+              <div class="user-name d-flex">
+                <span class="fs-5">Nome utente</span>
+              </div>
+
+              <div class="icons-user">
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+              
               
             </section>
             <!--alert per le netofiche-->
             <div class="alert">
-              
+              <div class="round-images bg-white notific">
+
+                <i class="fas fa-bell-slash"></i>
+              </div>
             </div>
             <!--campo di ricerca contatti-->
             <section>
@@ -49,7 +65,7 @@
 
 
           <!--colonna sezione di destra -->
-          <div class="col-8 ">
+          <div class="col-9 ">
 
             <!--header messages -->
             <div class="top-messages">
