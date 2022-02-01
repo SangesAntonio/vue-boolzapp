@@ -23,8 +23,9 @@ body{
 }
 .head .fas{
     padding-right: 10px;
-    color: lightgray;
-    font-size: 1.7rem;
+    color: rgb(170, 170, 170);
+    font-size: 1.4rem;
+    cursor: pointer;
 }
 
 .notific{
@@ -61,6 +62,7 @@ body{
     margin-right: 30px;
     color: lightgray;
     
+    
 }
 
 .last-access{
@@ -79,6 +81,7 @@ body{
 .fa-smile{
     font-size: 2rem;
     color: gray;
+    cursor: pointer;
 }
 
 /*layout*/

@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vue Boolzap</title>
+  
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'
     integrity='sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=='
     crossorigin='anonymous' />
@@ -14,6 +15,7 @@
     crossorigin='anonymous' />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
 </head>
 
 <body>
@@ -69,27 +71,25 @@
             <section class="contact-list">
 
               <!-- chat aperte-->
-              <div v-for='(contact, index) in contacts' class="d-flex contact-chat clicked-chat">
+              <div v-for='(contact, index) in contacts' class="d-flex contact-chat " class='clicked-chat' @click='getChat(index)'>
                 <img :src="`img/avatar${contact.avatar}.jpg`" class='round-images'alt="">
                 <span class="fs-5 ps-2 name-user">{{contact.name}}</span>
               </div>
-              
-
             </section>
           </div>
 
 
           <!--colonna sezione di destra -->
-          <div class="col-8 p-0 ">
+          <div class="col-8 p-0" >
 
             <!--header messages -->
-            <div class="top-messages">
-              <section class="head d-flex">
-                <div class="user-image">
-                  <img src="img/avatar_io.jpg" class="round-images " alt="">
+            <div class="top-messages" >
+              <section v-for='(contact, index) in contacts' v-if='getCurrentName(index)'  class="head d-flex">
+                <div class="user-image" >
+                  <img src="`img/avatar${contact.avatar}.jpg`" class="round-images " alt="">
                 </div>
                 <div class="user-name ">
-                  <h3 class="fs-5 pt-3 mb-0">Michele</h3>
+                  <h3 class="fs-5 pt-3 mb-0">{{contact.name}}</h3>
                   <p class="last-access">ultimo acceso alle 18:00</p>
                 </div>
   
@@ -103,40 +103,15 @@
             </div>
 
             <!--chat messages section-->
-            <section class="main-chat">
+            <section v-for='(contact,index) in contacts' id="chat-messages" class="main-chat" v-if='getCurrentName(index)'>
               <div class="row gy-2">
                 <div class="col-12">
-                  <div class="msg sended-message offset-8">
-                    <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
-                    <span class="msg-info d-flex ">15:30</span>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="msg sended-message offset-8">
-                    <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
-                    <span class="msg-info d-flex ">15:30</span>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="msg sended-message offset-8">
-                    <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
-                    <span class="msg-info d-flex ">15:30</span>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="msg sended-message offset-8">
-                    <p class="ps-3 mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni quasi voluptas quibusdam nobis, in nam nisi deleniti. Ex perspiciatis deleniti numquam! Quos aliquid ea itaque ad voluptas nam beatae.</p>
+                  <div class="msg col-4" class='{getStatus(index)}'>
+                    <p class="ps-3 mb-0">{{getMessage(index)}}</p>
                     <span class="msg-info d-flex ">15:30</span>
                   </div>
                 </div>
                 
-                <div class="row gy-2">
-                  <div class="col-12">
-                    <div class="msg received-message col-4">
-                      <p class="ps-3 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta excepturi </p>
-                      <span class="msg-info d-flex  ">15:30</span>
-                    </div>
-                </div>
               </div>
             </section>
             
