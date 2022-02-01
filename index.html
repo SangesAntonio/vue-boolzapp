@@ -71,7 +71,7 @@
             <section class="contact-list">
 
               <!-- chat aperte-->
-              <div v-for='(contact, index) in contacts' class="d-flex contact-chat " class='clicked-chat' @click='getChat(index)'>
+              <div v-for='(contact, index) in contacts' class="d-flex contact-chat " :class='classClicked(index)' @click='getChat(index)'>
                 <img :src="`img/avatar${contact.avatar}.jpg`" class='round-images'alt="">
                 <span class="fs-5 ps-2 name-user">{{contact.name}}</span>
               </div>
@@ -86,7 +86,7 @@
             <div class="top-messages" >
               <section v-for='(contact, index) in contacts' v-if='getCurrentName(index)'  class="head d-flex">
                 <div class="user-image" >
-                  <img src="`img/avatar${contact.avatar}.jpg`" class="round-images " alt="">
+                  <img :src="`img/avatar${contact.avatar}.jpg`" class="round-images " alt="">
                 </div>
                 <div class="user-name ">
                   <h3 class="fs-5 pt-3 mb-0">{{contact.name}}</h3>
@@ -105,9 +105,9 @@
             <!--chat messages section-->
             <section v-for='(contact,index) in contacts' id="chat-messages" class="main-chat" v-if='getCurrentName(index)'>
               <div class="row gy-2">
-                <div class="col-12">
-                  <div class="msg col-4" class='{getStatus(index)}'>
-                    <p class="ps-3 mb-0">{{getMessage(index)}}</p>
+                <div class="col-12" v-for='(message, index) in contact.messages'>
+                  <div class="msg col-4" :class='getStatus()'>
+                    <p class="ps-3 mb-0">{{message.text}}</p>
                     <span class="msg-info d-flex ">15:30</span>
                   </div>
                 </div>
@@ -119,7 +119,7 @@
             <section class="type-msg d-flex align-items-center justify-content-between">
               <i class="far fa-smile"></i>
               <div class="container-input-msg">
-                <input type="text" class="msg-input" placeholder="Scrivi un messaggio">
+                <input type="text" class="msg-input" v-model='newMessage' placeholder="Scrivi un messaggio" @keyup.enter='newMessages()'>
               </div>
               <i class="fas fa-microphone pe-2"></i>
             </section>
