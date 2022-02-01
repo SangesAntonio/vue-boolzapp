@@ -50,7 +50,7 @@ const app = new Vue({
           {
             date: '20/03/2020 16:35:00',
             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-            status: 'received',
+            status: 'sent',
           }
           ],
         },
@@ -96,7 +96,7 @@ const app = new Vue({
     },
     methods:{
       getChat(index){
-        return this.currentIndex = index;
+         this.currentIndex = index;
       },
       classClicked(index){
         return index === this.currentIndex  ? 'clicked-chat': ''; 
@@ -106,9 +106,8 @@ const app = new Vue({
         return (this.currentIndex === index);
       },
 
-      getStatus(){
-        console.log(this.contacts.status)
-        if(this.status === 'sent'){
+      getStatus(index){
+        if(this.contacts[this.currentIndex].messages[index].status === 'sent'){
           return 'sended-message offset-8'
         }else{
           return 'received-message';
@@ -116,20 +115,16 @@ const app = new Vue({
         };
       },
       newMessages(){
-        const newMessage = this.newMessage;
+        const newMessage = this.newMessage.trim();
         if(newMessage){
-          messages.push({
+          this.contacts[this.currentIndex].messages.push({
             date: '10/01/2020 15:30:55',
             text: newMessage,
             status: 'sent'
           });
-        }
-        this.newMessage= '';
+          this.newMessage='';
+        };
+        
       }
-      
-      
-    
-      
-
     },
 })

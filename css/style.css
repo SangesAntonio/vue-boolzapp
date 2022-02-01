@@ -125,7 +125,7 @@ body{
     height: 75vh;
 }
 .name-user{
-    border-bottom: 1px solid lightgray;
+    
     width: 100%;
 }
 
@@ -163,7 +163,7 @@ body{
 
 /*** JS classes***/
 .clicked-chat{
-    background-color:#F9F9F9 ;
+    background-color:#e4e3e3 ;
 }
 
 .sended-message{
