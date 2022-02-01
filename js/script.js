@@ -124,24 +124,24 @@ const app = new Vue({
             status: 'sent'
           });
           this.newMessage='';
+          setTimeout(()=>{
+            this.contacts[this.currentIndex].messages.push({
+              date: '10/01/2020 15:30:55',
+              text: 'ok prego',
+              status: 'received'
+            });
+          },3000)
           
           
-          this.botMessage();
         };
       },
-      botMessage(){
-        setTimeout(()=>{
-          this.contacts[this.currentIndex].messages.push({
-            date: '10/01/2020 15:30:55',
-            text: 'ok prego',
-            status: 'received'
-          });
-        },3000)
-      }
+      
+        
+      
     },
   
     created(){
       
-      this.botMessage();
+     
     }
 })
