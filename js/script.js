@@ -1,7 +1,8 @@
 
 
 console.log('JS OK', Vue);
-dayjs("MM-DD-YYYY");
+dayjs.extend(dayjs_plugin_customParseFormat);
+
 const app = new Vue({
     el:'#root',
     data:{
@@ -123,8 +124,24 @@ const app = new Vue({
             status: 'sent'
           });
           this.newMessage='';
+          
+          
+          this.botMessage();
         };
-        
+      },
+      botMessage(){
+        setTimeout(()=>{
+          this.contacts[this.currentIndex].messages.push({
+            date: '10/01/2020 15:30:55',
+            text: 'ok prego',
+            status: 'received'
+          });
+        },3000)
       }
     },
+  
+    created(){
+      
+      this.botMessage();
+    }
 })
