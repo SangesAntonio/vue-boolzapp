@@ -141,6 +141,7 @@ body{
     min-height: 40px;
     border-radius: 10px;
     padding: 10px;
+    Word-wrap: break-word;
     position: relative;
 }
 .msg-info{

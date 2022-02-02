@@ -6,6 +6,7 @@ dayjs.extend(dayjs_plugin_customParseFormat);
 const app = new Vue({
     el:'#root',
     data:{
+      clicked:false,
       currentIndex: 0,
       search: '',
       newMessage:'',
@@ -135,23 +136,22 @@ const app = new Vue({
         };
       },
       findeContact(){
-        this.contacts.forEach((contact,i) => {
-          if(!contact[i].name.includes(this.search))
-          
-          console.log(this.contacts[this.currentIndex].visible)
-          return this.contacts[this.currentIndex].visible=false;
-          
+        this.contacts.forEach((contact,index) => {
+           this.contacts[index].visible = contact.name.toLowerCase().includes(this.search.toLowerCase());
         });
       },
       showMenù(){
-        let clicked= false;
-        return
+        this.clicked= true;
+        
       },
       dellMessage(index){
         this.contacts[this.currentIndex].messages.splice(index,1)
 
+      },
+      classMenu(){
+        if( this.clicked === true)
+        return classe = 'drop-menù d-inline';
+        
       }
-
-      
     },
 })
