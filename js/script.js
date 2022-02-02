@@ -7,6 +7,7 @@ const app = new Vue({
     el:'#root',
     data:{
       currentIndex: 0,
+      search: '',
       newMessage:'',
       user: {
         name: 'Nome Utente',
@@ -102,7 +103,10 @@ const app = new Vue({
       classClicked(index){
         return index === this.currentIndex  ? 'clicked-chat': ''; 
       },
-
+      time(){
+        nowTime=dayjs().format('DD/MM/YYYY HH:mm:ss')
+        return text=`Ultimo accesso ${nowTime} `
+      },
      
 
       getStatus(index){
@@ -124,12 +128,30 @@ const app = new Vue({
           setTimeout(()=>{
             this.contacts[this.currentIndex].messages.push({
               date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-              text: 'Vabe comunque lascia stare...',
+              text: 'Vabe comunque lascia stare... ',
               status: 'received'
             });
           },3000)
         };
       },
+      findeContact(){
+        this.contacts.forEach((contact,i) => {
+          if(!contact[i].name.includes(this.search))
+          
+          console.log(this.contacts[this.currentIndex].visible)
+          return this.contacts[this.currentIndex].visible=false;
+          
+        });
+      },
+      showMenù(){
+        let clicked= false;
+        return
+      },
+      dellMessage(index){
+        this.contacts[this.currentIndex].messages.splice(index,1)
+
+      }
+
       
     },
 })

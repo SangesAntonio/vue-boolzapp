@@ -64,7 +64,7 @@
               <div class="search-cs">
 
                 <i class="fas fa-search"></i>
-                <input type="text" class="input-search" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" class="input-search" v-model.trim='search' placeholder="Cerca o inizia una nuova chat" @keyup='findeContact()'>
               </div>
             </section>
             
@@ -72,9 +72,12 @@
             <section class="contact-list">
 
               <!-- chat aperte-->
-              <div v-for='(contact, index) in contacts' class="d-flex contact-chat " :class='classClicked(index)' @click='getChat(index)' role="button">
+              <div v-for='(contact, index) in contacts' v-if='contact.visible' class="d-flex contact-chat " :class='classClicked(index)' @click='getChat(index)' role="button">
                 <img :src="`img/avatar${contact.avatar}.jpg`" class='round-images'alt="">
-                <span class="fs-5 ps-2 name-user">{{contact.name}}</span>
+                <span class="fs-5 ps-2 name-user">{{contact.name}}
+
+                  <p class="last-access">{{time()}}</p>
+                </span>
               </div>
             </section>
           </div>
@@ -91,7 +94,7 @@
                 </div>
                 <div class="user-name ">
                   <h3 class="fs-5 pt-3 mb-0">{{contacts[currentIndex].name}}</h3>
-                  <p class="last-access">ultimo acceso alle 18:00</p>
+                  <p class="last-access">{{time()}}</p>
                 </div>
   
                 <div class="icons-user pe-3">
@@ -108,6 +111,12 @@
               <div class="row gy-2">
                 <div class="col-12" v-for='(message, index) in contacts[currentIndex].messages'>
                   <div class="msg col-4" :class='getStatus(index)'>
+                    <!--menù a tendina messaggio -->
+                    <div class="drop-menù" class='{d-inline: }'>
+                      <p>Info messaggio</p>
+                      <p role="button" @click='dellMessage(index)'>Elimina messaggio</p>
+                    </div>
+                    <i class="fas fa-chevron-down d-flex justify-content-end " role="button" @click='showMenù()'></i>
                     <p class="ps-3 mb-0">{{message.text}}</p>
                     <span class="msg-info d-flex justify-content-end">{{message.date}}</span>
                   </div>
