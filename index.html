@@ -72,7 +72,7 @@
             <section class="contact-list">
 
               <!-- chat aperte-->
-              <div v-for='(contact, index) in contacts' class="d-flex contact-chat " :class='classClicked(index)' @click='getChat(index)'>
+              <div v-for='(contact, index) in contacts' class="d-flex contact-chat " :class='classClicked(index)' @click='getChat(index)' role="button">
                 <img :src="`img/avatar${contact.avatar}.jpg`" class='round-images'alt="">
                 <span class="fs-5 ps-2 name-user">{{contact.name}}</span>
               </div>
@@ -109,7 +109,7 @@
                 <div class="col-12" v-for='(message, index) in contacts[currentIndex].messages'>
                   <div class="msg col-4" :class='getStatus(index)'>
                     <p class="ps-3 mb-0">{{message.text}}</p>
-                    <span class="msg-info d-flex ">15:30</span>
+                    <span class="msg-info d-flex justify-content-end">{{message.date}}</span>
                   </div>
                 </div>
                 

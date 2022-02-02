@@ -101,47 +101,35 @@ const app = new Vue({
       },
       classClicked(index){
         return index === this.currentIndex  ? 'clicked-chat': ''; 
-    },
-
-      getCurrentName(index){
-        return (this.currentIndex === index);
       },
+
+     
 
       getStatus(index){
         if(this.contacts[this.currentIndex].messages[index].status === 'sent'){
           return 'sended-message offset-8'
         }else{
           return 'received-message';
-
         };
       },
       newMessages(){
         const newMessage = this.newMessage.trim();
         if(newMessage){
           this.contacts[this.currentIndex].messages.push({
-            date: '10/01/2020 15:30:55',
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             text: newMessage,
             status: 'sent'
           });
           this.newMessage='';
           setTimeout(()=>{
             this.contacts[this.currentIndex].messages.push({
-              date: '10/01/2020 15:30:55',
-              text: 'ok prego',
+              date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+              text: 'Vabe comunque lascia stare...',
               status: 'received'
             });
           },3000)
-          
-          
         };
       },
       
-        
-      
     },
-  
-    created(){
-      
-     
-    }
 })
