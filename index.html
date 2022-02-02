@@ -64,7 +64,7 @@
               <div class="search-cs">
 
                 <i class="fas fa-search"></i>
-                <input type="text" class="input-search" v-model='search' placeholder="Cerca o inizia una nuova chat" @keyup='findeContact()'>
+                <input type="text" class="input-search" v-model.trim='search' placeholder="Cerca o inizia una nuova chat" @keyup='findeContact()'>
               </div>
             </section>
             
@@ -112,11 +112,11 @@
                 <div class="col-12" v-for='(message, index) in contacts[currentIndex].messages'>
                   <div class="msg col-4" :class='getStatus(index)'>
                     <!--menù a tendina messaggio -->
-                    <div :class="classMenu()" v-if='clicked'>
+                    <div :class="classMenu(index)" class="drop-menù" >
                       <p>Info messaggio</p>
                       <p role="button" @click='dellMessage(index)'>Elimina messaggio</p>
                     </div>
-                    <i class="fas fa-chevron-down d-flex justify-content-end " role="button" @click='showMenù()'></i>
+                    <i class="fas fa-chevron-down d-flex justify-content-end " role="button" @click='showMenù(index)'></i>
                     <p class="ps-3 mb-0">{{message.text}}</p>
                     <span class="msg-info d-flex justify-content-end">{{message.date}}</span>
                   </div>

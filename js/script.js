@@ -6,7 +6,8 @@ dayjs.extend(dayjs_plugin_customParseFormat);
 const app = new Vue({
     el:'#root',
     data:{
-      clicked:false,
+      clicked:'',
+      toggleFleg: false,
       currentIndex: 0,
       search: '',
       newMessage:'',
@@ -140,18 +141,19 @@ const app = new Vue({
            this.contacts[index].visible = contact.name.toLowerCase().includes(this.search.toLowerCase());
         });
       },
-      showMenù(){
-        this.clicked= true;
+      showMenù(index){
+        this.clicked= (index);
+        this.toggleFleg = !this.toggleFleg
         
+      },
+      classMenu(index){
+          if( this.clicked === index && this.toggleFleg)
+          return classe = 'd-inline';
+          
       },
       dellMessage(index){
         this.contacts[this.currentIndex].messages.splice(index,1)
 
       },
-      classMenu(){
-        if( this.clicked === true)
-        return classe = 'drop-menù d-inline';
-        
-      }
     },
 })
